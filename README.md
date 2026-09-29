@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fathom AI — Demo Meeting Assistant
 
-## Getting Started
+Demo-quality AI meeting assistant inspired by Fathom. Technical assessment build — not a production clone.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js (App Router) + TypeScript + Tailwind + shadcn/ui
+- Supabase Auth + PostgreSQL
+- LLM analysis (later phases)
+- Google Meet + Demo Mode (same pipeline)
+
+## Core pipeline
+
+```text
+Meeting Source (google_meet | demo)
+  → Transcript
+  → AI Analysis (structured JSON)
+  → Meeting Intelligence Page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Phase status
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [x] Phase 1 — Foundation (auth, schema, layout)
+- [x] Phase 2 — Dashboard (meeting-first UI, cards, New Meeting)
+- [x] Phase 3 — Meeting detail (Overview / Transcript / action items)
+- [x] Phase 4 — Demo Meeting workflow
+- [x] Phase 5 — AI analysis (OpenAI + local fallback)
+- [x] Phase 6 — Ask AI
+- [x] Phase 7 — Follow-up email
+- [x] Phase 8 — Google Meet integration (OAuth + create Meet + paste transcript)
+- [x] Phase 9 — Polish (in progress with integrations UX)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+1. Copy `.env.example` → `.env.local` and set Supabase URL + anon key
+2. `npm install`
+3. `npm run dev`
+4. Open http://localhost:3000 → `/auth/login`
 
-To learn more about Next.js, take a look at the following resources:
+## Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+  app/
+    auth/login | signup
+    (app)/dashboard | meetings/[id] | settings/integrations
+  components/
+    auth/ layout/ ui/
+  lib/
+    supabase/ types/ ai/ google/ meetings/  (ai/google filled in later phases)
+supabase/migrations/
+```
