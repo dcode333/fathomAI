@@ -32,8 +32,8 @@ John: Stripe is the most important part for launch. Reporting can come later.
 Umair: I'll have the first version ready next week.
 Sarah: Perfect. I'll send the Stripe credentials today.`;
 
-const WATCH_STORAGE_KEY = (id: string) => `fathom-watch-end:${id}`;
-const IMPORT_STORAGE_KEY = (id: string) => `fathom-auto-import:${id}`;
+const WATCH_STORAGE_KEY = (id: string) => `rekapp-watch-end:${id}`;
+const IMPORT_STORAGE_KEY = (id: string) => `rekapp-auto-import:${id}`;
 const MAX_IMPORT_ATTEMPTS = 24;
 const END_CHECK_MS = 15_000;
 const BASE_IMPORT_MS = 20_000;

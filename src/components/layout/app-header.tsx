@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { APP_NAME } from "@/lib/meetings/constants";
 import { cn } from "@/lib/utils";
 
 type AppHeaderProps = {
@@ -65,7 +66,7 @@ export function AppHeader({
             <Sparkles className="size-4" />
           </span>
           <span className="text-[15px] font-semibold tracking-tight">
-            Fathom AI
+            {APP_NAME}
           </span>
         </Link>
 

@@ -60,7 +60,7 @@ export function NewMeetingDialog({
   function runCreateMeet() {
     setMode("create");
     startTransition(async () => {
-      const result = await createMeetWithNotetaker("Fathom AI Meeting");
+      const result = await createMeetWithNotetaker("RekApp Meeting");
       if (result.error || !result.meetingId) {
         toast.error(result.error ?? "Could not create Google Meet");
         setMode("idle");

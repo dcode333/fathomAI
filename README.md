@@ -1,6 +1,6 @@
-# Fathom AI — Demo Meeting Assistant
+# RekApp — Demo Meeting Assistant
 
-Demo-quality AI meeting assistant inspired by Fathom. Technical assessment build — not a production clone.
+Demo-quality AI meeting assistant. Technical assessment build — meeting capture, transcript, analysis, Ask AI, and follow-ups.
 
 ## Stack
 

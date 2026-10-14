@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bookmark, Clock3, Sparkles } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+import { APP_NAME } from "@/lib/meetings/constants";
 import { formatTimestamp } from "@/lib/meetings/format";
 
 export default async function PublicClipPage({
@@ -38,7 +39,7 @@ export default async function PublicClipPage({
             <Sparkles className="size-4" />
           </span>
           <div>
-            <p className="text-sm font-semibold tracking-tight">Fathom AI</p>
+            <p className="text-sm font-semibold tracking-tight">{APP_NAME}</p>
             <p className="text-xs text-muted-foreground">Shared meeting clip</p>
           </div>
         </div>
@@ -78,7 +79,7 @@ export default async function PublicClipPage({
         <p className="text-center text-sm text-muted-foreground">
           Want notes like this for your meetings?{" "}
           <Link href="/auth/signup" className="font-medium text-primary hover:underline">
-            Try Fathom AI
+            Try {APP_NAME}
           </Link>
         </p>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import { APP_NAME } from "@/lib/meetings/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fathom AI — Meeting Intelligence",
+  title: `${APP_NAME} — Meeting Intelligence`,
   description:
-    "Demo-quality AI meeting assistant: transcript, summary, decisions, action items, and Ask AI.",
+    "AI meeting assistant: transcript, summary, decisions, action items, and Ask AI.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -81,7 +81,7 @@ export async function createMeetWithNotetaker(title?: string) {
     };
   }
 
-  const meetingTitle = title?.trim() || "Fathom AI Meeting";
+  const meetingTitle = title?.trim() || "RekApp Meeting";
 
   try {
     let meetUrl: string;

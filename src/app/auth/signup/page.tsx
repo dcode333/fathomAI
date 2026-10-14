@@ -1,4 +1,5 @@
 import { SignupForm } from "@/components/auth/signup-form";
+import { APP_NAME } from "@/lib/meetings/constants";
 import { Sparkles } from "lucide-react";
 
 export default function SignupPage() {
@@ -13,7 +14,7 @@ export default function SignupPage() {
           <Sparkles className="size-5" />
         </span>
         <div>
-          <p className="text-lg font-semibold tracking-tight">Fathom AI</p>
+          <p className="text-lg font-semibold tracking-tight">{APP_NAME}</p>
           <p className="text-sm text-muted-foreground">
             AI meeting intelligence
           </p>

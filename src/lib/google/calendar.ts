@@ -78,7 +78,7 @@ export async function createGoogleMeetEvent(options: {
       },
       body: JSON.stringify({
         summary: options.title,
-        description: "Created by Fathom AI demo notetaker",
+        description: "Created by RekApp demo notetaker",
         start: { dateTime: start.toISOString() },
         end: { dateTime: end.toISOString() },
         conferenceData: {
